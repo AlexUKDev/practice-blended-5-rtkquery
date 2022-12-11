@@ -20,6 +20,8 @@ export const commentApi = createApi({
         method: "POST",
         body: comment,
       }),
+
+      invalidatesTags: ["Comments"],
     }),
     updateCommentCount: builder.mutation({
       query: ({ id, ...body }) => ({
@@ -27,6 +29,7 @@ export const commentApi = createApi({
         method: "PUT",
         body,
       }),
+      invalidatesTags: ["Comments"],
     }),
   }),
 });
